@@ -1,0 +1,48 @@
+{
+  "name": "bot-pattern",
+  "type": "module",
+  "version": "1.0.0",
+  "packageManager": "pnpm@9.1.0",
+  "author": "redsomber",
+  "license": "MIT",
+  "main": "dist/app.js",
+  "scripts": {
+    "prepare": "husky || true",
+    "dist": "pnpm build && node dist/app.js",
+    "dev": "tsc-watch --skipLibCheck --onSuccess \"node dist/app.js\"",
+    "build": "tsc --skipLibCheck",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix --color ."
+  },
+  "dependencies": {
+    "@grammyjs/conversations": "^1.2.0",
+    "@grammyjs/menu": "^1.2.2",
+    "@grammyjs/runner": "^2.0.3",
+    "@grammyjs/storage-file": "^2.4.2",
+    "@grammyjs/transformer-throttler": "^1.2.1",
+    "dotenv": "^16.4.5",
+    "envalid": "^8.0.0",
+    "grammy": "^1.26.0",
+    "grammy-middlewares": "^1.0.11",
+    "mongoose": "^8.4.4"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.21.2",
+    "@typegoose/typegoose": "^12.5.0",
+    "@types/node": "^20.14.9",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-format": "^0.1.2",
+    "eslint-plugin-prettier": "^5.1.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "source-map-support": "^0.5.21",
+    "tsc-watch": "^6.2.0",
+    "typescript": "^5.5.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
